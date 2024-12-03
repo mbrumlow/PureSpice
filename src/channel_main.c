@@ -217,10 +217,11 @@ static PS_STATUS onMessage_mainChannelsList(struct PSChannel * channel)
 
       if (ch->connected)
       {
-        purespice_disconnect();
+        //purespice_disconnect();
         PS_LOG_ERROR("Protocol error. The server asked us to reconnect an "
             "already connected channel (%s)", ch->name);
-        return PS_STATUS_ERROR;
+        //return PS_STATUS_ERROR;
+        continue;
       }
 
       PS_STATUS status = ps_connectChannel(ch);
